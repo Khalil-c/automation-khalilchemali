@@ -4,13 +4,21 @@
   "description": "",
   "main": "index.js",
   "scripts": {
-    "cypress:open":"cypress open",
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "cypress:open": "cypress open",
+    "cypress:run": "cypress run --spec cypress/integration/regression-test-suite.spec.js",
+    "cypress:run:report": "cypress run --reporter mochawesome",
+    "test:vrt": "percy exec cypress run --spec 'cypress/integration/vrt.spec.js'"
   },
   "keywords": [],
   "author": "",
   "license": "ISC",
   "devDependencies": {
+    "@percy/cli": "*",
+    "@percy/cypress": "^3.1.0",
     "cypress": "^4.5.0"
+  },
+  "dependencies": {
+    "faker": "^5.5.3",
+    "mochawesome": "^6.2.2"
   }
 }
